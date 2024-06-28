@@ -1,0 +1,313 @@
+body {
+    background-color: #Fff4f2;
+    
+
+}
+html {
+    scroll-behavior: smooth;
+}
+
+h1{
+    font-family:"Quiche Stencil";
+}
+h2{
+    font: 2em Garamond;
+}
+#firstsec{  
+    color: #134d15;
+    background-color: #d0e1d1;
+    background-image: url('Untitled.png');
+    border:2px solid #134d15;  
+    padding:20px;  
+    margin-top: 55px;
+    border-radius: 10px;
+    position: relative;
+     
+
+}  
+#firstsec::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    
+    background-size: 100% 100%;
+    z-index: -1;
+}
+
+section img.top-right {
+    position: absolute;
+    top: 15px; 
+    right: 19px; 
+    width: 100px; 
+    height: 100px; 
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1.5px solid #134d15;
+
+}
+
+.animated-heading {
+    font-size: 36px;
+    animation: fadeInMoveUp 2s ease-in-out;
+}
+
+@keyframes fadeInMoveUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    background-color: #f1b6ac;
+    color: #134d15;
+    padding: 0.5em 0;
+    position: fixed;
+    width: 98.65%;
+    top: 0;
+    z-index: 1000;
+    border: 2px solid #134d15;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 3em;
+}
+
+nav ul li a {
+    color: #134d15;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 0.5em 1em;
+    margin-top: 20px; /* Adjust based on header height */
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 2s forwards;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Optional: slide up effect */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#events {
+    padding-top: 0px;
+    background-color: #d0e1d1 ;
+    border: 1px solid #134d15;
+
+}
+
+#about {
+    background-image: url('Designer\ Wallpaper\,\ Fine\ Fabrics\ &\ High\ End\ Furniture.jpeg');
+    background-color: #F7eeed ;
+    border: 2px solid #134d15;
+
+}
+.section-title {
+    color: #134d15;
+}
+
+.section-subtitle {
+    color: #134d15;
+    font-size: 1.2em;
+
+}
+
+.section-text {
+    color: #134d15;
+    font-size: 1.2em;
+    
+}
+
+.section-list {
+    color: #134d15;
+    font-size: 1.2em;
+    list-style-type: square;
+    
+}
+
+
+#profiles {
+    background-color: #d0e1d1 ;
+    border: 1px solid #134d15;
+    
+    color:#134d15;
+    color: rgba(0, 0, 0, 0.5);
+    
+
+}
+
+#contact {
+    background-color: #Fff4f2;
+    border: 1px solid #134d15;
+
+}
+
+.instagram-logo {
+    width: 25px; /* Adjust size as needed */
+    height: 23px; /* Adjust size as needed */
+    margin-right: 0.1em; /* Space between logo and text */
+}
+
+.instagram {
+    font-size: 15px;
+    position: absolute;/* Position Instagram link absolutely */
+    left: -0.5em; /* Adjust the value to set distance from the left edge */
+}
+
+.animation-container {
+    width: 100%; /* Adjust to fit the desired width */
+    height: 300px; /* Adjust height as needed */
+    overflow: hidden; /* Hide overflow content */
+    position: relative;
+    background-color: #Fff4f2;
+    
+}
+
+.images-wrapper {
+    margin-top: 40px;
+    display: flex;
+    gap: 25px;
+    width: 200px; /* Ensures the wrapper fits the content */
+    animation: scrollImages 5s linear infinite; /* Apply the animation */
+}
+
+.moving-picture {
+    width: 175px; /* Adjust size as needed */
+    height: 235px;
+    transition: transform .2s;
+}
+@keyframes scrollImages {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.moving-picture:hover{
+    -ms-transform: scale(1.3); /* IE 9 */
+  -webkit-transform: scale(1.3); /* Safari 3-8 */
+  transform: scale(1.3); 
+}
+
+
+@keyframes movePictures {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #F5F5DC;
+    top: 0;
+    bottom: 0;
+    left: 52%;
+    margin-left: 8px;
+}
+.timeline-entry {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+.timeline-entry::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -5px;
+    background-color: #F5F5DC;
+    border: 4px solid #F5F5DC;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+    
+}
+.left {
+    left: 0;
+}
+.right {
+    left: 50%;
+}
+.timeline-entry .date {
+    padding: 5px 0;
+    font-size: 20px;
+    color: #888;
+}
+.timeline-entry .content {
+    padding: 20px;
+    background-color: whitesmoke;
+    position: relative;
+    border-radius: 6px;
+}
+.carousel {
+    position: absolute;
+    top: 50px;
+    right: -10px; /* Adjust the value to position the carousel correctly */
+    width: 400px;
+    height: 350px;
+    border: 2px solid #d0e1d1;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-images img {
+    width: 400px;
+    height: 300px; /* Adjust height as necessary */
+    border-radius: 6px;
+}
+.carousel-buttons {
+    text-align: center;
+    margin-top: 8px;
+}
+.carousel-buttons button {
+    background-color: #f1b6ac;
+    color: #F5F5DC;
+    border: none;
+    padding: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
