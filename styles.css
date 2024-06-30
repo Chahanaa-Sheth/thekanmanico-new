@@ -22,9 +22,12 @@ h2{
     margin-top: 55px;
     border-radius: 10px;
     position: relative;
-     
-
 }  
+
+#firstsec-head{
+    font-size: 30px;
+}
+
 #firstsec::before {
     content: '';
     position: absolute;
@@ -282,7 +285,7 @@ section {
 .carousel {
     position: absolute;
     top: 50px;
-    right: -10px; /* Adjust the value to position the carousel correctly */
+    right: -450px; /* Adjust the value to position the carousel correctly */
     width: 400px;
     height: 350px;
     border: 2px solid #d0e1d1;
@@ -311,6 +314,7 @@ section {
     cursor: pointer;
     border-radius: 4px;
 }
+
 
 @media (max-width: 600px) {
     body {
@@ -341,6 +345,9 @@ section {
         position: relative;
         box-sizing: border-box;
     }
+    #firstsechead{
+        font-size: 30px;
+    }
 
     #firstsec::before {
         content: '';
@@ -356,25 +363,27 @@ section {
     section img.top-right {
         position: static;
         display: block;
-        margin: 0 auto 10px auto;
-        width: 80px; /* Adjust size for mobile */
-        height: 80px; /* Adjust size for mobile */
+        margin: 0 auto 5px auto;
+        width: 55px; /* Adjust size for mobile */
+        height: 55px; /* Adjust size for mobile */
         object-fit: cover;
         border-radius: 50%;
         border: 1.5px solid #134d15;
         box-sizing: border-box;
+        margin-right: 0.01em;
+        margin-top: -58px;
     }
 
     .animated-heading {
-        font-size: 24px; /* Adjust font size for mobile */
+        font-size: 21px; /* Adjust font size for mobile */
     }
 
     header {
         background-color: #f1b6ac;
         color: #134d15;
-        padding: 0.5em 0;
+        padding: 0.3em 0;
         position: fixed;
-        width: 100%;
+        width: 96.4%;
         top: 0;
         z-index: 1000;
         border: 2px solid #134d15;
@@ -382,23 +391,27 @@ section {
     }
 
     nav ul {
-        flex-direction: column;
+        flex-direction: row;
         padding: 0;
+        justify-content: space-around;
+        margin: 0;
     }
 
     nav ul li {
-        margin: 0.5em 0;
+        margin: 0;
     }
 
     nav ul li a {
         color: #134d15;
         text-decoration: none;
-        font-size: 1em;
+        font-size: 1.0em;
+        padding: 0.5em;
+        display: block;
     }
 
     section {
         padding: 0.5em 1em;
-        margin-top: 80px;
+        margin-top: 60px;
         opacity: 0;
         animation: fadeIn 2s forwards;
         box-sizing: border-box;
@@ -408,6 +421,22 @@ section {
         border: 1px solid #134d15;
         padding: 10px;
         margin-bottom: 10px;
+    }
+    .section-subtitle{
+        font-size: 19px;
+    }
+    .section-title{
+        font-size: 24px;
+    }
+    .section-list{
+        font-size: 18px;
+    }
+    .section-text{
+        font-size: 18px;
+    }
+
+    #about{
+        margin-top: 30px;
     }
 
     .instagram-logo {
@@ -420,7 +449,17 @@ section {
     }
 
     .animation-container {
-        height: 200px;
+        height: 250px;
+        overflow: hidden; /* Hide overflow content */
+        position: relative;
+    }
+
+    .images-wrapper {
+        margin-top: 40px;
+        display: flex;
+        gap: 25px;
+        width: calc(175px * 6); /* Ensures the wrapper fits the content */
+        animation: scrollImages 15s linear infinite; /* Adjust animation duration as needed */
     }
 
     .moving-picture {
@@ -429,36 +468,114 @@ section {
     }
 
     .timeline {
+        position: relative;
         max-width: 100%;
-        padding: 10px;
+        margin: 0 auto;
     }
 
     .timeline::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        background-color: transparent;
+        top: 0;
+        bottom: 0;
         left: 50%;
-        margin-left: -3px;
+        transform: translateX(-50%);
     }
 
     .timeline-entry {
+        padding: 10px 20px;
+        position: relative;
+        background-color: transparent;
         width: 100%;
-        padding: 10px;
+        box-sizing: border-box;
     }
-
+    
     .timeline-entry::after {
-        left: calc(50% - 12.5px);
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -5px;
+        background-color: transparent;
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
     }
 
-    .carousel {
-        top: auto;
-        right: auto;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .carousel-images img {
-        width: 100%;
-        height: auto;
-    }
+    .timeline-entry.left::after,
+.timeline-entry.right::after {
+    left: calc(50% - 12.5px);
+    right: auto;
 }
+
+.timeline-entry.left {
+    left: 0;
+}
+
+.timeline-entry.right {
+    left: 0;
+}
+
+.timeline-entry .date {
+    padding: 5px 0;
+    font-size: 16px;
+    color: #888;
+    text-align: center;
+}
+.timeline,
+.timeline-entry {
+    outline: none;
+    border: none; /* Remove border if any */
+}
+.timeline-entry .content {
+    padding: 15px;
+    background-color: whitesmoke;
+    position: relative;
+    border-radius: 6px;
+    text-align: center;
+}
+.carousel {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    border: 2px solid whitesmoke;
+    border-radius: 6px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.carousel-buttons {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.carousel-buttons button {
+    background-color: #f1b6ac;
+    color: #F5F5DC;
+    border: none;
+    padding: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+}
+
+
 
 /* Tablets */
 @media (min-width: 601px) and (max-width: 768px) {
@@ -608,5 +725,3 @@ section {
         height: auto;
     }
 }
-
-
